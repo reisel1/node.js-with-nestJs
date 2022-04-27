@@ -15,7 +15,6 @@ async function bootstrap() {
     .setTitle('Items example')
     .setDescription('The items API description')
     .setVersion('1.0')
-    .addTag('Items')
     .build();
 
   const options: SwaggerDocumentOptions = {

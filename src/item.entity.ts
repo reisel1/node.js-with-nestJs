@@ -1,5 +1,4 @@
 import { IsString, IsNumber, IsOptional } from 'class-validator';
-import { ApiHideProperty,} from '@nestjs/swagger';
 
 export class Item {
 
