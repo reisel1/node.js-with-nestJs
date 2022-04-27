@@ -9,8 +9,8 @@ import {
     UseGuards,
   } from '@nestjs/common';
   import { ItemsService } from './items.service';
-  import { Items } from '../items';
-  import { Item } from '../item';
+  import { Items } from '../items.entity';
+  import { Item } from '../item.entity';
   import { AuthGuard } from '@nestjs/passport';
 
   
@@ -28,15 +28,13 @@ import {
       return this.itemsService.find(id);
     }
   
-    @UseGuards(AuthGuard('jwt'))
     @Post()
-    async create(@Body('item') item: Item): Promise<void> {
+    async create(@Body() item: Item): Promise<void> {
       this.itemsService.create(item);
     }
   
-    @UseGuards(AuthGuard('jwt'))
     @Put()
-    async update(@Body('item') item: Item): Promise<void> {
+    async update(@Body() item: Item): Promise<void> {
       this.itemsService.update(item);
     }
   
